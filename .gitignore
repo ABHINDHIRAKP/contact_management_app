@@ -10,14 +10,14 @@ lerna-debug.log*
 
 # ----------------------------------
 # Node Modules (frontend + backend)
-react-frontend/node_modules/
+mycontacts-frontend/node_modules/
 mycontacts-backend/node_modules/
-node_modules/             # just in case someone installs at root
+node_modules/             # in case someone installs at root
 
 # ----------------------------------
 # Build / Output Files
-react-frontend/dist/
-react-frontend/build/
+mycontacts-frontend/dist/
+mycontacts-frontend/build/
 mycontacts-backend/dist/
 dist/
 build/
@@ -29,7 +29,7 @@ build/
 # Environment Variables
 .env
 .env.*
-react-frontend/.env
+mycontacts-frontend/.env
 mycontacts-backend/.env
 
 # ----------------------------------
