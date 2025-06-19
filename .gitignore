@@ -1,5 +1,5 @@
-# ------------------------------
-# Logs (Common)
+# ----------------------------------
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -8,32 +8,37 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# ------------------------------
-# Node Modules (Both Frontend & Backend)
-node_modules/
-**/node_modules/
+# ----------------------------------
+# Node Modules (frontend + backend)
+react-frontend/node_modules/
+mycontacts-backend/node_modules/
+node_modules/             # just in case someone installs at root
 
-# ------------------------------
-# Dist / Build Files
+# ----------------------------------
+# Build / Output Files
+react-frontend/dist/
+react-frontend/build/
+mycontacts-backend/dist/
 dist/
-dist-ssr/
 build/
 .react-cache/
+.cache/
+.parcel-cache/
 
-# ------------------------------
-# Local Environment Variables
+# ----------------------------------
+# Environment Variables
 .env
-.env.*           # like .env.development or .env.local
-**/.env          # frontend or backend
-**/.env.*
+.env.*
+react-frontend/.env
+mycontacts-backend/.env
 
-# ------------------------------
-# OS-Specific
-.DS_Store        # macOS
-Thumbs.db        # Windows
+# ----------------------------------
+# OS Specific
+.DS_Store
+Thumbs.db
 
-# ------------------------------
-# Editor & IDEs
+# ----------------------------------
+# Editor & IDE
 .vscode/
 !.vscode/extensions.json
 .idea/
@@ -43,12 +48,11 @@ Thumbs.db        # Windows
 *.sln
 *.sw?
 
-# ------------------------------
-# Testing & Coverage
+# ----------------------------------
+# Testing / Coverage
 coverage/
 *.lcov
 
-# ------------------------------
-# Others (optional, depends on your tooling)
-.cache/
-.parcel-cache/
+# ----------------------------------
+# Misc
+*.local
