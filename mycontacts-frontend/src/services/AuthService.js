@@ -13,10 +13,3 @@ export const loginUser = async (formData) => {
     
 };
 
-/*export const registerUser = (formData) => {
-    console.log(formData);
-}
-
-/*export const loginUser = (formData) => {
-    console.log(formData);
-}*/
