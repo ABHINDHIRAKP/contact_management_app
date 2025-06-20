@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './Login.module.css';
 import { loginUser } from '../services/AuthService'
 
 function Login() {
@@ -26,8 +27,6 @@ function Login() {
             else {
                 throw new Error("Login Failed");
             }
-            
-            
         }
         catch (err) {
             alert(err.response?.data?.message||"Login Failed");
@@ -39,33 +38,35 @@ function Login() {
     };
   
     return (
-        <div className="ui container">
-        <h2>Login</h2>
-        <form className="ui form" onSubmit={handleLogin}>
+        <div className={styles.container}>
+        <h2 className={styles.title}>Login</h2>
+        <form className={styles.form} onSubmit={handleLogin}>
 
-            <div className="field">
-                <label>Email</label>
+            <div className={styles.field}>
+                <label className={styles.label}>Email</label>
                 <input 
                     type="text" 
                     name="email" 
                     placeholder="Email" 
                     value = {form.email}
+                    className={styles.input}
                     onChange={(e) => setForm({...form, email: e.target.value})}
                 />
             </div>
 
-            <div className="field">
-            <label>Password</label>
+            <div className={styles.field}>
+            <label className={styles.label}>Password</label>
             <input 
                 type="password" 
                 name="password" 
                 placeholder="Password" 
                 value = {form.password}
+                className={styles.input}
                 onChange={(e) => setForm({...form, password: e.target.value})}
             />
             </div>
 
-            <button className="ui button blue" type="submit" disabled={loading}>Login</button>
+            <button className={styles.loginButton} type="submit" disabled={loading}>Login</button>
         </form>
         </div>
     );

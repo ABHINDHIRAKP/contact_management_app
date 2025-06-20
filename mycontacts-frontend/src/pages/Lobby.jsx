@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styles from './Lobby.module.css';
 
 function Lobby() {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <button onClick = {() => navigate("/login")}>
+        <div className={styles.container}>
+            <button className={styles.lobbyButton} onClick = {() => navigate("/login")}>
                 Login
             </button>
-            <button onClick = {() => navigate("/Register")}>
+            <button className={styles.lobbyButton} onClick = {() => navigate("/Register")}>
                 Register
             </button>
         </div>

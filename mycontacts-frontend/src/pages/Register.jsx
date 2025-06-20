@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { registerUser } from '../services/AuthService'
 import { useNavigate } from 'react-router-dom';
+import styles from './Register.module.css';
 
 function Register() {
 
@@ -30,48 +31,49 @@ function Register() {
         catch (err) {
             alert(err.response?.data?.message || "Registration Failed");
         }
-        
-
     };
   
     return (
-        <div className="ui container">
-        <h2>Register</h2>
-        <form className="ui form" onSubmit={handleRegister}>
-            <div className="field">
-                <label>Name</label>
+        <div className={styles.container}>
+        <h2 className={styles.title}>Register</h2>
+        <form className={styles.form} onSubmit={handleRegister}>
+            <div className={styles.field}>
+                <label className={styles.label}>Name</label>
                 <input 
                     type="text" 
                     name="name"  
                     placeholder="Name" 
                     value = {form.name}
+                    className={styles.input}
                     onChange={(e) => setForm({...form, name: e.target.value})}
                 />
             </div>
 
-            <div className="field">
-                <label>Email</label>
+            <div className={styles.field}>
+                <label className={styles.label}>Email</label>
                 <input 
                     type="text" 
                     name="email" 
                     placeholder="Email" 
                     value = {form.email}
+                    className={styles.input}
                     onChange={(e) => setForm({...form, email: e.target.value})}
                 />
             </div>
 
-            <div className="field">
-            <label>Password</label>
+            <div className={styles.field}>
+            <label className={styles.label}>Password</label>
             <input 
                 type="password" 
                 name="password" 
                 placeholder="Password" 
                 value = {form.password}
+                className={styles.input}
                 onChange={(e) => setForm({...form, password: e.target.value})}
             />
             </div>
 
-            <button className="ui button blue" type="submit" disabled={loading}>Register</button>
+            <button className={styles.registerButton} type="submit" disabled={loading}>Register</button>
         </form>
         </div>
     );
