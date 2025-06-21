@@ -26,10 +26,12 @@ function Register() {
             });
             alert("Registration Successfull");
             navigate('/');
-            setLoading(false);
         }
         catch (err) {
             alert(err.response?.data?.message || "Registration Failed");
+        }
+        finally {
+            setLoading(false);
         }
     };
   

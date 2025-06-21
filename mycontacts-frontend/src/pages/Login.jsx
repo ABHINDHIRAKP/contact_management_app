@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import styles from './Login.module.css';
 import { loginUser } from '../services/AuthService'
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -23,6 +25,7 @@ function Login() {
                     password: ''
                 });
                 alert("Login Successfull");
+                navigate('/Contacts');
             }
             else {
                 throw new Error("Login Failed");
