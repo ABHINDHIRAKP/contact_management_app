@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getContacts } from '../services/ContactService';
+import {Link} from 'react-router-dom';
 
 function ContactList() {
   const [contacts, setContacts] = useState([]);
@@ -25,6 +26,12 @@ function ContactList() {
           </div>
         ))}
       </div>
+      <h2>
+        Contact List
+        <Link to = '/Contacts/add'>
+            <button className = "ui button blue right">Add Contact</button>                    
+        </Link>
+      </h2>
     </div>
   );
 }
