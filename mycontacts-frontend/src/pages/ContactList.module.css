@@ -1,0 +1,78 @@
+.container {
+  background: #181f2a;
+  color: #e3e9f7;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 40px auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  color: #90caf9;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.item {
+  background: #222b3a;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  display: flex;
+  align-items: flex-start;
+}
+.content {
+  flex: 1;
+}
+.header {
+  color: #42a5f5;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.details {
+  color: #b3c6e6;
+  font-size: 0.98rem;
+}
+.addButtonContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.addButton {
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.addButton:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+}
+@media (max-width: 700px) {
+  .container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .addButton {
+    width: 100%;
+    font-size: 1rem;
+  }
+} 

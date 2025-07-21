@@ -3,8 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: #181f2a;
+  color: #e3e9f7;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -12,12 +13,11 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #42a5f5aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #90caf9aa);
 }
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -26,17 +26,18 @@
     transform: rotate(360deg);
   }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
-
 .card {
   padding: 2em;
+  background: #222b3a;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  color: #e3e9f7;
 }
-
 .read-the-docs {
-  color: #888;
+  color: #90caf9;
 }

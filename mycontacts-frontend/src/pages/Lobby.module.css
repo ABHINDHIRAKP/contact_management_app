@@ -5,8 +5,28 @@
   justify-content: center;
   min-height: 60vh;
   gap: 1.5rem;
+  background: #181f2a;
+  color: #e3e9f7;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
 }
-
+.title {
+  color: #90caf9;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: #b3c6e6;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.buttonContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 .lobbyButton {
   width: 180px;
   padding: 0.75rem 0;
@@ -21,11 +41,27 @@
   transition: background 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
 }
-
 .lobbyButton:hover {
   background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
 }
-
+.loginButton {
+  /* Extra blue accent for login */
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.15);
+}
+.registerButton {
+  /* Slightly lighter blue for register */
+  background: linear-gradient(90deg, #42a5f5 60%, #90caf9 100%);
+  color: #181f2a;
+}
+.registerButton:hover {
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+}
+.footer {
+  margin-top: 2rem;
+  color: #b3c6e6;
+  font-size: 0.95rem;
+}
 @media (max-width: 500px) {
   .lobbyButton {
     width: 95vw;
@@ -33,5 +69,9 @@
   }
   .container {
     min-height: 40vh;
+    padding: 1.2rem 0.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
   }
 } 
