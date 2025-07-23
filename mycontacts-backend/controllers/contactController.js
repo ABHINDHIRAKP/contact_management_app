@@ -82,7 +82,7 @@ const deleteContact = asyncHandler(async (req, res) => {
         throw new Error("user not authorized to delete this contact");
     }
     
-    await Contact.deleteOne(req.params.id); 
+    await Contact.findByIdAndDelete(req.params.id); 
     res.status(200).json({ message: "delete contact " + req.params.id});
 });
 

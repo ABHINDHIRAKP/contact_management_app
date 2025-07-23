@@ -8,4 +8,8 @@ export const getContacts = async () => {
 export const addContact = async (contact) => {
   const res = await api.post('/contacts', contact);
   return res.data;
-}
+};
+
+export const deleteContact = async (id) => {
+  await api.delete(`/contacts/${id}`);
+};

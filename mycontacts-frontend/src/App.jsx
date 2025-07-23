@@ -6,7 +6,7 @@ import Lobby from './pages/Lobby'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ContactList from './pages/ContactList'
-import {addContact} from './services/ContactService'
+import {addContact, deleteContact} from './services/ContactService'
 import AddContacts from './pages/AddContacts'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
@@ -21,6 +21,14 @@ function App() {
     setContacts([...contacts, response.data]);
   }
 
+  const deleteContactHandler = async (id) => {
+    await deleteContact(id);
+    const newContactList = contacts.filter((contact) => {
+      return contact._id !== id;
+    });
+    setContacts(newContactList);
+  };
+
   return (
     <>
       <Router>
@@ -28,13 +36,17 @@ function App() {
           <Route path = "/" element={<Lobby />} />
           <Route path = "/Login" element={<Login />} />
           <Route path = "/Register" element={<Register />} />
-          <Route path = "/Contacts" element={<ContactList />} />
+          <Route 
+            path = "/Contacts" 
+            element={<ContactList deleteContactHandler = {deleteContactHandler}/>
+            } 
+          />
           <Route 
             path = '/Contacts/add' 
             element={
               <AddContacts addContactHandler={addContactHandler}/>
             }
-           />
+          />
         </Routes>
       </Router>
     </>
