@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getContacts, deleteContact } from '../services/ContactService';
+import { logoutUser } from '../services/AuthService';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './ContactList.module.css';
 
@@ -21,6 +22,10 @@ function ContactList({deleteContactHandler}) {
 
   }
 
+  const handleLogout = async () => {
+    await logoutUser();
+  };
+
   useEffect(() => {
     const fetch = async () => {
       const data = await getContacts();
@@ -31,7 +36,16 @@ function ContactList({deleteContactHandler}) {
 
   return (
     <div className={styles.listContainer}>
-      <h2 className={styles.title}>Your Contacts</h2>
+      <div className={styles.header}>
+        <h2 className={styles.title}>Your Contacts</h2>
+        <button className={styles.logoutButton} onClick={handleLogout} title="Logout">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16,17 21,12 16,7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
       <div className={styles.list}>
         {contacts.map((c) => (
           <div key={c._id} className={styles.contactRow}>

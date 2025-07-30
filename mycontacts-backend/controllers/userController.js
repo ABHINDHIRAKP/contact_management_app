@@ -65,7 +65,10 @@ const loginUser = asyncHandler(async (req, res) => {
             { expiresIn: '7d'});
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
-            sameSite: 'strict'
+            sameSite: 'strict',
+            path: '/',
+            secure: false, // Set to true in production with HTTPS
+
         });
         res.json({accessToken});
     }else {
@@ -81,4 +84,25 @@ const currentUser = asyncHandler(async (req, res) => {
     res.json(req.user);
 });
 
-module.exports =  {registerUser, loginUser, currentUser};
+//@desc user logout
+//@route POST /api/users/logout
+//@access private
+const logoutUser = asyncHandler(async (req, res) => {
+    console.log('Logout request received');
+    console.log('Cookies before logout:', req.cookies);
+    res.clearCookie('refreshToken', {
+        httpOnly: true,
+        sameSite: 'strict',
+        path: '/',
+        secure: false, // Set to true in production with HTTPS
+
+    });
+    
+    
+    
+    
+    console.log('Cookie clearing attempted');
+    res.json({ message: 'Logged out successfully' });
+});
+
+module.exports =  {registerUser, loginUser, currentUser, logoutUser};

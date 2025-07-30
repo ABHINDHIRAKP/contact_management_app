@@ -13,3 +13,21 @@ export const loginUser = async (formData) => {
     
 };
 
+export const logoutUser = async () => {
+    const response = await axios.post('http://localhost:5000/api/users/logout', {}, {
+        withCredentials: true
+    });
+    console.log('Logout response:', response.data);
+    console.log('Clearing local storage and redirecting...');
+    // Clear local storage
+    localStorage.removeItem('user');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    
+
+    
+    // Redirect to login
+    window.location.href = '/login';
+    
+};
+
