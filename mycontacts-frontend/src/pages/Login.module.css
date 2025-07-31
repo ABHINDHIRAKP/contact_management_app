@@ -68,6 +68,26 @@
 .loginButton:hover:not(:disabled) {
   background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
 }
+
+.registerLink {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b3c6e6;
+}
+
+.link {
+  color: #42a5f5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #90caf9;
+  text-decoration: underline;
+}
+
 @media (max-width: 700px) {
   .container {
     max-width: 98vw;

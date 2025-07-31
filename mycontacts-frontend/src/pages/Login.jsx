@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Login.module.css';
 import { loginUser } from '../services/AuthService'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
     const [loading, setLoading] = useState(false);
@@ -71,6 +71,11 @@ function Login() {
 
             <button className={styles.loginButton} type="submit" disabled={loading}>Login</button>
         </form>
+        
+        <div className={styles.registerLink}>
+            <span>New to this? </span>
+            <Link to="/register" className={styles.link}>Register here</Link>
+        </div>
         </div>
     );
     }
