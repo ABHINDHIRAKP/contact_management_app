@@ -1,0 +1,227 @@
+.container {
+  width: 100%;
+  max-width: 700px;
+  min-height: 100vh;
+  background: #181f2a;
+  color: #e3e9f7;
+  padding: 0 1.5rem 2rem 1.5rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #90caf9;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.18s;
+  background: transparent;
+}
+
+.backLink:hover {
+  background: #232c3b;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  outline: none;
+  color: #e57373;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background 0.18s, color 0.18s;
+}
+
+.logoutButton:hover {
+  background: #2c1a1a;
+  color: #ff5252;
+}
+
+.contactCard {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.avatarSection {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #232c3b;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+
+.contactName {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #90caf9;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.contactDetails {
+  margin-bottom: 2rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 0.5rem;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  border-bottom: 1px solid #232c3b;
+  transition: background 0.18s;
+}
+
+.detailItem:hover {
+  background: #232c3b;
+}
+
+.detailLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #90caf9;
+  min-width: 100px;
+}
+
+.detailValue {
+  color: #e3e9f7;
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #232c3b;
+}
+
+.editButton, .deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.18s;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.editButton {
+  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
+  color: white;
+}
+
+.editButton:hover {
+  background: linear-gradient(135deg, #1565c0 60%, #1976d2 100%);
+}
+
+.deleteButton {
+  background: none;
+  color: #e57373;
+  border: 1px solid #e57373;
+}
+
+.deleteButton:hover {
+  background: #2c1a1a;
+  color: #ff5252;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #e3e9f7;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.error {
+  text-align: center;
+  color: #e3e9f7;
+  padding: 2rem;
+}
+
+.error h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #90caf9;
+}
+
+.error p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.backButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background 0.18s;
+}
+
+.backButton:hover {
+  background: linear-gradient(135deg, #1565c0 60%, #1976d2 100%);
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 0.5rem 1.5rem 0.5rem;
+  }
+  
+  .contactName {
+    font-size: 1.3rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .editButton, .deleteButton {
+    justify-content: center;
+  }
+} 

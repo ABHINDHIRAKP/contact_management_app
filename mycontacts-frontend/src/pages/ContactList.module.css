@@ -41,10 +41,21 @@
   border-bottom: 1px solid #232c3b;
   padding: 1.1rem 0.5rem 1.1rem 0.5rem;
   transition: background 0.18s;
-  cursor: pointer;
   min-width: 0;
 }
-.contactRow:hover {
+
+.contactContent {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+  transition: background 0.18s;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.contactContent:hover {
   background: #232c3b;
 }
 

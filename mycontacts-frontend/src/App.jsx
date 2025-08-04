@@ -6,6 +6,7 @@ import Lobby from './pages/Lobby'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ContactList from './pages/ContactList'
+import ContactDetail from './pages/ContactDetail'
 import {addContact, deleteContact} from './services/ContactService'
 import AddContacts from './pages/AddContacts'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -46,6 +47,10 @@ function App() {
             element={
               <AddContacts addContactHandler={addContactHandler}/>
             }
+          />
+          <Route 
+            path = '/Contacts/:id' 
+            element={<ContactDetail />}
           />
         </Routes>
       </Router>

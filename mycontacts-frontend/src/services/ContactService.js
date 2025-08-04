@@ -5,6 +5,11 @@ export const getContacts = async () => {
   return res.data;
 };
 
+export const getContactById = async (id) => {
+  const res = await api.get(`/contacts/${id}`);
+  return res.data;
+};
+
 export const addContact = async (contact) => {
   const res = await api.post('/contacts', contact);
   return res.data;
