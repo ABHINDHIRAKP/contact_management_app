@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/ABHINDHIRAKP/contact-management-app.git'
+                git branch: 'main', url: 'https://github.com/ABHINDHIRAKP/contact_management_app.git'
             }
         }
 
